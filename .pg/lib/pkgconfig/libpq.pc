@@ -1,0 +1,14 @@
+prefix=/workspace/.pg
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libpq
+Description: PostgreSQL libpq library
+URL: https://www.postgresql.org/
+Version: 16.15
+Requires: 
+Requires.private: libssl, libcrypto
+Cflags: -I${includedir}
+Libs: -L${libdir} -lpq
+Libs.private: -L/workspace/.pg/lib -lpgcommon -lpgport -lssl -lgssapi_krb5 -lm
